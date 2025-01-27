@@ -1,0 +1,25 @@
+default: &default
+  host: <%= ENV.fetch("DATABASE_HOST") { 'localhost' } %>  # Nome do serviço no Docker Compose
+  port: 5432
+  adapter: postgresql
+  encoding: unicode
+  user: <%= ENV.fetch("DATABASE_USER") { 'postgres' } %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") { 'postgres' } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 10 } %>
+
+development:
+  <<: *default
+  database: test_3cliks_development
+  host: <%= ENV.fetch("DATABASE_HOST") { 'postgres' } %>
+
+test:
+  <<: *default
+  database: test_3cliks_test
+  host: <%= ENV.fetch("DATABASE_HOST") { 'postgres' } %>
+
+production:
+  <<: *default
+  database: test_3cliks_production
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  host: <%= ENV.fetch("DATABASE_HOST") { 'postgres' } %>
