@@ -28,12 +28,14 @@ Se você ainda não tem o Docker e o Docker Compose instalados, siga os links pa
 ### Como Executar o Projeto
 
 1. Clone o repositório para sua máquina local:
-   ```bash
+
    git clone
+   
    ```bash
-        https://github.com/juliocesarjunior/3clicks.git
+    https://github.com/juliocesarjunior/3clicks.git
     ```
-   cd 3clicks
+   
+2. cd 3clicks
 
 Executar Inicialmente:
 
